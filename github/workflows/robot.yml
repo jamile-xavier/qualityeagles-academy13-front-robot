@@ -1,10 +1,10 @@
-name: Robot Framework Tests
+name: Robot Framework Front Tests
 
 on: [push, workflow_dispatch]
 
 jobs:
   test:
-    name: API Tests Robot Dojo
+    name: Front Tests Robot
     runs-on: ubuntu-24.04
 
     steps:
@@ -19,11 +19,10 @@ jobs:
       - name: Instalação das Dependencias
         run: |
           pip install robotframework
-          pip install robotframework-requests
           pip install --upgrade robotframework-seleniumlibrary
           pip install Faker
 
-      - name: Executando os testes de API do Robot
+      - name: Executando os testes de Front do Robot
         run: |
           robot --outputdir results/ .
 
@@ -31,7 +30,7 @@ jobs:
         uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: robot-framework-report
+          name: robot-framework-front-report
           path: results
 
   deploy:
@@ -47,7 +46,7 @@ jobs:
       id-token: write
     environment:
       name: github-pages
-      url: https://clestonv.github.io/dojo-robot-2/report.html
+      url: https://jamile-xavier.github.io/robot_front/report.html
 
     steps:
       - name: Setup Pages
@@ -56,7 +55,7 @@ jobs:
       - name: Download Artifacts
         uses: actions/download-artifact@v4
         with:
-          name: robot-framework-report
+          name: robot-framework-front-report
           path: results/
 
       - name: Upload artifact
