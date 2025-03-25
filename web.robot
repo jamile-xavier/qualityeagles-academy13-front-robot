@@ -280,8 +280,8 @@ Realizar cadastro de usuario
 Abrir Navegador
     [Documentation]    Abre o navegador na página especificada
     [Arguments]    ${pagina}=${LOGIN}    ${browser}=${BROWSER}
-   # Open Browser    ${pagina}    ${browser}    options=add_argument("--headless")
-    Open Browser    ${pagina}    ${browser}    
+    Open Browser    ${pagina}    ${browser}    options=add_argument("--headless")
+    #Open Browser    ${pagina}    ${browser}    
     Maximize Browser Window
 
 Fechar o navegador
