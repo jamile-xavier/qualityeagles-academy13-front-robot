@@ -1,6 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
-Library    libs/get_fake_company.py
+Library    ../libs/get_fake_company.py
 Resource    ../pages/company_variaveis.robot
 
 *** Keywords ***

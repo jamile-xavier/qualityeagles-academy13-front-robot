@@ -1,6 +1,7 @@
 from faker import Faker
 import unicodedata
 import re
+from robot.api.deco import keyword
 
 faker = Faker('pt-BR')
 
@@ -36,6 +37,7 @@ def limpar_telefone(telefone):
     telefone_sem_acentos = remover_acentos(telefone)
     return re.sub(r'[^+\d]', '', telefone_sem_acentos)
 
+@keyword("Get Fake Company")
 def get_fake_company():
     """Gera dados de empresa fictícia com formatação adequada."""
     return {

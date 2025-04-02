@@ -1,6 +1,7 @@
 from faker import Faker
 import unicodedata
 import re
+from robot.api.deco import keyword
 
 faker = Faker('pt-BR')
 
@@ -23,7 +24,6 @@ def limpar_ponto_nome(nome):
     """Remove pontos e caracteres especiais de uma string de nome."""
     nome_sem_titulos = remover_titulos(nome)
     nome_sem_acentos = remover_acentos(nome_sem_titulos)
-    # Substitui underscore por espaço
     return nome_sem_acentos.replace('_', ' ')
 
 def limpar_cpf(cpf):
@@ -40,12 +40,13 @@ def gerar_rg_7_digitos():
         rg = faker.rg().replace('X', '')
         if len(rg) >= 7:
             return rg[:7]
-        
+
 def limpar_telefone(telefone):
     """Remove espaços e caracteres especiais do número de telefone."""
     telefone_sem_acentos = remover_acentos(telefone)
     return re.sub(r'[^+\d]', '', telefone_sem_acentos)
 
+@keyword("Get Fake Client")
 def get_fake_client():
     """Gera dados de pessoa fictícia com formatação adequada."""
     return {
@@ -60,6 +61,6 @@ def get_fake_client():
         "city": faker.city(),
         "neighborhood": faker.bairro(),
         "number": faker.building_number(),
-        "state":  faker.estado_sigla(),
+        "state": faker.estado_sigla(),
         "street": faker.street_name(),
-                 }
+    }
