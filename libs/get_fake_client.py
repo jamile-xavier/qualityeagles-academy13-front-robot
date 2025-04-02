@@ -4,12 +4,6 @@ import re
 
 faker = Faker('pt-BR')
 
-from faker import Faker
-import unicodedata
-import re
-
-faker = Faker('pt-BR')
-
 def remover_acentos(texto):
     """Remove acentos e caracteres especiais do texto."""
     texto_sem_acentos = unicodedata.normalize('NFKD', texto)
@@ -68,5 +62,4 @@ def get_fake_client():
         "number": faker.building_number(),
         "state":  faker.estado_sigla(),
         "street": faker.street_name(),
-        "password": faker.password(length=12)
-            }
+                 }

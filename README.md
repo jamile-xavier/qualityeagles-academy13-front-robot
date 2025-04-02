@@ -11,62 +11,95 @@ Teste de Automação Front de ERP
 <p align="center">Para realização dos testes foi utilizado os casos de testes e critérios de aceites disponibilizados pela Qa Coders através do Azure e também os endpoints disponibilizados através do Swagger.</p>
 <p align="center"> O Azure também foi utilizado para abertura das PBI´s, Test Plan Suite e Test Pan.</p>
 
-# Sumário
+### Sumário
 
-- 🛠 [Funcionalidades](#funcionalidades)
-- 💻 [Tecnologias](#tecnologias)
-- 💽 [Instalação](#instalação)
-- 👩 [Autora](#autora)
-- 📑 [Licença](#licença)
+- [Funcionalidades](#funcionalidades)
+- [Tecnologias](#tecnologias)
+- [Pre requisitos](#Pré-requisitos)
+- [Executando o projeto](#Executando-o-projeto)
+- [Autora](#autora)
+- [Licença](#licença)
 
-# Funcionalidades
+### Funcionalidades
 
 - [x] Fazer login;
-- [x] Cadastrar usuário;
+- [ ] Cadastrar usuário;
 - [x] Listar usuário;
-- [x] Listar usuário por id;
-- [x] Contagem de usuários;
-- [x] Atualizar cadastro de usuário;
-- [x] Atualizar senha de usuário por id;
-- [x] Atualizar status de usuário por id;
-- [x] Excluir usuário;
+- [ ] Atualizar cadastro de usuário;
+- [ ] Excluir usuário;
 - [x] Cadastrar cliente;
 - [x] Listar cliente;
-- [x] Listar cliente por id;
-- [x] Contagem de cliente;
-- [x] Atualizar cadastro de cliente;
-- [x] Excluir cliente;
-- [x] Cadastro de empresa;
+- [ ] Atualizar cadastro de cliente;
+- [ ] Excluir cliente;
+- [ ] Cadastro de empresa;
 - [x] Listar Empresas;
-- [x] Contagem de empresas;
-- [x] Atualizar empresa por id;
-- [x] Atualizar endereço da empresa por id;
-- [x] Atualizar o status da empresa por id
-- [x] Excluir empresa;
+- [ ] Atualizar cadastro da empresa;
+- [ ] Excluir empresa;
 
-# Tecnologias
+### Tecnologias
 
 - [Robot](https://robotframework.org/)
 - [Swagger](https://swagger.io/)
 - [Azure](https://azure.microsoft.com/pt-br/)
 
-# Instalação
+### Pré-requisitos
 
 Para utilizar o projeto em sua máquina será necessário possuir as seguintes ferramentas:
-[VsCode](https://code.visualstudio.com/) - Ou outro editor de texto. O passo a passo refere-se a utilização do VsCode.
+[VsCode](https://code.visualstudio.com/) - Ou outra IDE de sua preferência. O passo a passo refere-se a utilização do VsCode.
+
+#### Dependências
+
 [Robot](https://robotframework.org/)
 [RequestsLibrary](https://docs.robotframework.org/docs/different_libraries/requests)
 
-# Importando o projeto
+As dependências poderão ser instaladas manualmente ou utilizando o comando disponível em executando o projeto para que todas as dependências listadas no arquivo requeriments.txt sejam instaladas na raiz do projeto.
 
-- Salvar o projeto;
+### Executando-o-projeto
+
+- Realizar o dowload do projeto;
 - Abrir o VsCode;
 - Clicar em File;
 - Open Folder;
 - Selecionar pasta;
-- Abrir o terminal e digitar o comando: robot -d log .\web.robot
+- Abrir o terminal e digitar o comando para instalar as dependências:
 
-# Autora
+```bash
+pip install -r requeriments.txt
+```
+
+- Digitar no terminal o comando para executar todos os testes
+
+```bash
+robot -d log .\tests\
+```
+
+Para executar os testes por arquivo:
+
+Teste de clientes:
+
+```bash
+ robot -d log .\tests\client.robot
+```
+
+Teste de empresas:
+
+```bash
+ robot -d log .\tests\company.robot
+```
+
+Teste de login:
+
+```bash
+ robot -d log .\tests\login.robot
+```
+
+Teste de usuários:
+
+```bash
+ robot -d log .\tests\user.robot
+```
+
+### Autora
 
 <p> Jamile Xavier Mendonça </p>
 
@@ -74,6 +107,6 @@ Para utilizar o projeto em sua máquina será necessário possuir as seguintes f
 
 [Linkedin](https://www.linkedin.com/in/jamile-xavier/)
 
-# Licença
+### Licença
 
 MIT

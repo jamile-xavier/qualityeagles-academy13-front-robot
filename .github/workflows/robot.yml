@@ -21,6 +21,7 @@ jobs:
           pip install robotframework
           pip install --upgrade robotframework-seleniumlibrary
           pip install Faker
+          pip install pyyaml
 
       - name: Executando os testes de Front do Robot
         run: |
