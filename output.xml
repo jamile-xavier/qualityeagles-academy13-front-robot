@@ -1,272 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1.1 (Python 3.13.2 on win32)" generated="2025-04-02T19:59:12.082964" rpa="false" schemaversion="5">
-<suite id="s1" name="Client" source="c:\git\QaCoders\Quality_Eagles\Robot_Front\tests\client.robot">
-<kw name="Abrir o navegador e realizar login" owner="navigation_resource" type="SETUP">
-<kw name="Abrir Navegador" owner="navigation_resource">
+<robot generator="Robot 7.1.1 (Python 3.13.2 on win32)" generated="2025-04-02T20:26:11.570689" rpa="false" schemaversion="5">
+<suite id="s1" name="Login" source="c:\git\QaCoders\Quality_Eagles\Robot_Front\tests\login.robot">
+<kw name="Abrir Navegador" owner="navigation_resource" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-04-02T19:59:13.196530" level="INFO">Opening browser 'chrome' to base url 'https://quality-eagles-front.qacoders.dev.br/login'.</msg>
+<msg time="2025-04-02T20:26:13.938018" level="INFO">Opening browser 'chrome' to base url 'https://quality-eagles-front.qacoders.dev.br/login'.</msg>
 <arg>url=${url}</arg>
 <arg>browser=${browser}</arg>
 <arg>options=add_argument("--headless")</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-04-02T19:59:13.195982" elapsed="9.662108"/>
+<status status="PASS" start="2025-04-02T20:26:13.928491" elapsed="8.632342"/>
 </kw>
-<arg>${url}</arg>
-<arg>${browser}</arg>
+<arg>url=${LOGIN.url}${LOGIN.endpoint}</arg>
 <doc>Abre o navegador na página especificada</doc>
-<status status="PASS" start="2025-04-02T19:59:13.194764" elapsed="9.664351"/>
+<status status="PASS" start="2025-04-02T20:26:13.905333" elapsed="8.657480"/>
 </kw>
-<kw name="Navegar Para Página" owner="navigation_resource">
-<kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-04-02T19:59:22.862258" level="INFO">Opening url 'https://quality-eagles-front.qacoders.dev.br/login'</msg>
-<arg>${url}${url_complementar}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-04-02T19:59:22.861826" elapsed="0.286529"/>
-</kw>
-<arg>${LOGIN.url}</arg>
-<arg>${LOGIN.endpoint}</arg>
-<doc>Navega para a página especificada</doc>
-<status status="PASS" start="2025-04-02T19:59:22.859915" elapsed="0.288739"/>
-</kw>
-<kw name="Realizar login" owner="login_resources">
+<test id="s1-t1" name="TC03 - Realizar login com email inválido" line="18">
+<kw name="Realizar login sem sucesso" owner="login_resources">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-04-02T19:59:23.152546" level="INFO">Typing text 'sysadmin@qacoders.com' into text field 'id:email'.</msg>
+<msg time="2025-04-02T20:26:22.585144" level="INFO">Typing text 'sysadmin@qacoders.com.br' into text field 'id:email'.</msg>
 <arg>id:email</arg>
 <arg>${mail}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-02T19:59:23.151831" elapsed="0.560393"/>
+<status status="PASS" start="2025-04-02T20:26:22.580216" elapsed="0.418780"/>
 </kw>
 <kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2025-04-02T19:59:23.713489" level="INFO">Typing password into text field 'id:password'.</msg>
-<msg time="2025-04-02T19:59:23.785984" level="INFO">Temporally setting log level to: NONE</msg>
+<msg time="2025-04-02T20:26:23.004449" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg time="2025-04-02T20:26:23.088705" level="INFO">Temporally setting log level to: NONE</msg>
 <arg>id:password</arg>
 <arg>${password}</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-02T19:59:23.712796" elapsed="0.201055"/>
+<status status="PASS" start="2025-04-02T20:26:23.001819" elapsed="0.225997"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-04-02T19:59:23.914592" level="INFO">Clicking button 'class:css-1ucues4'.</msg>
+<msg time="2025-04-02T20:26:23.231206" level="INFO">Clicking button 'class:css-1ucues4'.</msg>
 <arg>class:css-1ucues4</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-02T19:59:23.914234" elapsed="0.187119"/>
+<status status="PASS" start="2025-04-02T20:26:23.228985" elapsed="0.228347"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>class:css-18le3pj</arg>
+<arg>class:MuiAlert-standardError</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-04-02T19:59:24.101805" elapsed="0.492708"/>
+<status status="PASS" start="2025-04-02T20:26:23.459164" elapsed="0.267152"/>
 </kw>
-<kw name="Capture Element Screenshot" owner="SeleniumLibrary">
-<msg time="2025-04-02T19:59:24.743880" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-element-screenshot-7.png"&gt;&lt;img src="selenium-element-screenshot-7.png" width="400px"&gt;&lt;/a&gt;</msg>
-<arg>class:css-18le3pj</arg>
-<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
-<status status="PASS" start="2025-04-02T19:59:24.595029" elapsed="0.149264"/>
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>locator=class:MuiAlert-standardError</arg>
+<arg>text=E</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-04-02T20:26:23.727965" elapsed="0.068442"/>
 </kw>
-<arg>${user}</arg>
-<arg>${password}</arg>
-<doc>Keyword usada para realizar login</doc>
-<status status="PASS" start="2025-04-02T19:59:23.150665" elapsed="1.593881"/>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-04-02T20:26:23.946851" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-04-02T20:26:23.797630" elapsed="0.150837"/>
 </kw>
-<arg>user=${MAIL}</arg>
-<arg>password=${PASSWORD}</arg>
-<arg>url=${LOGIN.url}${LOGIN.endpoint}</arg>
-<arg>browser=chrome</arg>
-<doc>Abre o navegador e realiza o login</doc>
-<status status="PASS" start="2025-04-02T19:59:13.192929" elapsed="11.551835"/>
+<arg>${MAIL_INVALID}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Keyword usada para testar o login com dados incorretos</doc>
+<status status="PASS" start="2025-04-02T20:26:22.576026" elapsed="1.375193"/>
 </kw>
-<test id="s1-t1" name="TC02 - Realizar cadastro de cliente sem e-mail" line="18">
-<kw name="Navegar Para Página" owner="navigation_resource">
-<kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-04-02T19:59:24.748506" level="INFO">Opening url 'https://quality-eagles-front.qacoders.dev.br/client'</msg>
-<arg>${url}${url_complementar}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-04-02T19:59:24.748069" elapsed="0.723492"/>
-</kw>
-<arg>url=${CLIENT.url}</arg>
-<arg>url_complementar=${CLIENT.endpoint}</arg>
-<doc>Navega para a página especificada</doc>
-<status status="PASS" start="2025-04-02T19:59:24.746270" elapsed="0.725690"/>
-</kw>
-<kw name="Get Fake Client" owner="get_fake_client">
-<msg time="2025-04-02T19:59:25.527871" level="INFO">${client} = {'name': 'Erick da Luz', 'birthday': '04012022', 'email': 'anna-liz64@example.com', 'cpf': '69037281478', 'rg': '6340528', 'phone': '55016910568053', 'job': 'Operador de telemarketing', 'zipCode': '27...</msg>
-<var>${client}</var>
-<doc>Gera dados de pessoa fictícia com formatação adequada.</doc>
-<status status="PASS" start="2025-04-02T19:59:25.525353" elapsed="0.003996"/>
-</kw>
-<kw name="Realizar cadastro de cliente com falha" owner="client_resource">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>class:css-t7gv5b</arg>
-<arg>timeout=30s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-04-02T19:59:25.547560" elapsed="0.131430"/>
-</kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-04-02T19:59:25.681169" level="INFO">Clicking button 'class=css-k66aq0'.</msg>
-<arg>${btnNovoCadastro}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-02T19:59:25.680134" elapsed="0.233453"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>class:css-1gibqcr</arg>
-<arg>timeout=30s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-04-02T19:59:25.914224" elapsed="0.059838"/>
-</kw>
-<kw name="Get Fake Client" owner="get_fake_client">
-<msg time="2025-04-02T19:59:25.976281" level="INFO">${client} = {'name': 'Maite Cirino', 'birthday': '07142022', 'email': 'fpastor@example.org', 'cpf': '31574692828', 'rg': '4780231', 'phone': '55072923258336', 'job': 'Contabilista', 'zipCode': '67903023', 'city':...</msg>
-<var>${client}</var>
-<doc>Gera dados de pessoa fictícia com formatação adequada.</doc>
-<status status="PASS" start="2025-04-02T19:59:25.974468" elapsed="0.002058"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-04-02T19:59:25.977869" level="INFO">Typing text 'Erick da Luz' into text field 'id:fullName'.</msg>
-<arg>${cadastroCliente.nomeCompleto}</arg>
-<arg>${nomeCompleto}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-02T19:59:25.976848" elapsed="0.281381"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-04-02T19:59:26.260689" level="INFO">Typing text '04012022' into text field 'id:birthDate'.</msg>
-<arg>${cadastroCliente.dataNascimento}</arg>
-<arg>${dataNascimento}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-02T19:59:26.259317" elapsed="0.200852"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-04-02T19:59:26.461649" level="INFO">Typing text '' into text field 'id:mail'.</msg>
-<arg>${cadastroCliente.email}</arg>
-<arg>${email}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-02T19:59:26.460559" elapsed="0.128973"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-04-02T19:59:26.591228" level="INFO">Typing text '55016910568053' into text field 'id:phone'.</msg>
-<arg>${cadastroCliente.telefone}</arg>
-<arg>${telefone}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-02T19:59:26.590156" elapsed="0.252701"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-04-02T19:59:26.845090" level="INFO">Typing text 'Operador de telemarketing' into text field 'id:currentRole'.</msg>
-<arg>${cadastroCliente.cargo}</arg>
-<arg>${cargo}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-02T19:59:26.843616" elapsed="0.621361"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-04-02T19:59:27.467688" level="INFO">Typing text '6340528' into text field 'name:rg'.</msg>
-<arg>${cadastroCliente.rg}</arg>
-<arg>${rg}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-02T19:59:27.465516" elapsed="1.076053"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-04-02T19:59:28.543210" level="INFO">Typing text '69037281478' into text field 'name:cpf'.</msg>
-<arg>${cadastroCliente.cpf}</arg>
-<arg>${cpf}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-02T19:59:28.542087" elapsed="0.250677"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-04-02T19:59:28.794407" level="INFO">Typing text '27403752' into text field 'id:zipCode'.</msg>
-<arg>${cadastroCliente.cep}</arg>
-<arg>${cep}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-02T19:59:28.793235" elapsed="0.268498"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-04-02T19:59:29.063297" level="INFO">Typing text 'Brasil' into text field 'id:country'.</msg>
-<arg>${cadastroCliente.pais}</arg>
-<arg>Brasil</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-02T19:59:29.062150" elapsed="0.201899"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-04-02T19:59:29.265633" level="INFO">Typing text 'Rocha do Campo' into text field 'id:city'.</msg>
-<arg>${cadastroCliente.cidade}</arg>
-<arg>${cidade}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-02T19:59:29.264534" elapsed="0.222799"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-04-02T19:59:29.489904" level="INFO">Typing text 'MG' into text field 'id:state'.</msg>
-<arg>${cadastroCliente.estado}</arg>
-<arg>${estado}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-02T19:59:29.487771" elapsed="0.226758"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-04-02T19:59:29.716129" level="INFO">Typing text 'Santa Maria' into text field 'id:district'.</msg>
-<arg>${cadastroCliente.bairro}</arg>
-<arg>${bairro}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-02T19:59:29.714979" elapsed="0.224091"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-04-02T19:59:29.941046" level="INFO">Typing text 'Via Pires' into text field 'id:street'.</msg>
-<arg>${cadastroCliente.rua}</arg>
-<arg>${rua}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-02T19:59:29.939673" elapsed="0.277593"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-04-02T19:59:30.221155" level="INFO">Typing text '39' into text field 'id:number'.</msg>
-<arg>${cadastroCliente.numero}</arg>
-<arg>${numeroImovel}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-02T19:59:30.219839" elapsed="0.278695"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-04-02T19:59:30.501246" level="INFO">Typing text 'Apto' into text field 'id:complement'.</msg>
-<arg>${cadastroCliente.complemento}</arg>
-<arg>Apto</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-02T19:59:30.499317" elapsed="0.176912"/>
-</kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-04-02T19:59:30.677189" level="INFO">Clicking button 'id=save'.</msg>
-<arg>${btnSalvarNovo}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-02T19:59:30.676714" elapsed="0.465638"/>
-</kw>
-<arg>nomeCompleto=${client}[name]</arg>
-<arg>dataNascimento=${client}[birthday]</arg>
-<arg>email=</arg>
-<arg>telefone=${client}[phone]</arg>
-<arg>cargo=${client}[job]</arg>
-<arg>rg=${client}[rg]</arg>
-<arg>cpf=${client}[cpf]</arg>
-<arg>cep=${client}[zipCode]</arg>
-<arg>cidade=${client}[city]</arg>
-<arg>estado=${client}[state]</arg>
-<arg>bairro=${client}[neighborhood]</arg>
-<arg>rua=${client}[street]</arg>
-<arg>numeroImovel=${client}[number]</arg>
-<arg>complemento=Apto 531</arg>
-<doc>Keyword utilizada para cadastro de cliente sem sucesso</doc>
-<status status="PASS" start="2025-04-02T19:59:25.545352" elapsed="5.597443"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>class:css-bbipig</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-04-02T19:59:31.146042" elapsed="0.066436"/>
-</kw>
-<kw name="Capture Element Screenshot" owner="SeleniumLibrary">
-<msg time="2025-04-02T19:59:31.375719" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-element-screenshot-8.png"&gt;&lt;img src="selenium-element-screenshot-8.png" width="400px"&gt;&lt;/a&gt;</msg>
-<arg>class:css-bbipig</arg>
-<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
-<status status="PASS" start="2025-04-02T19:59:31.213220" elapsed="0.162863"/>
-</kw>
-<status status="PASS" start="2025-04-02T19:59:24.745026" elapsed="6.643625"/>
+<status status="PASS" start="2025-04-02T20:26:22.563985" elapsed="1.393709"/>
 </test>
 <kw name="Fechar o navegador" owner="navigation_resource" type="TEARDOWN">
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-04-02T19:59:31.402256" elapsed="2.931832"/>
+<status status="PASS" start="2025-04-02T20:26:23.969613" elapsed="2.283382"/>
 </kw>
 <doc>Fecha o navegador</doc>
-<status status="PASS" start="2025-04-02T19:59:31.398666" elapsed="2.935780"/>
+<status status="PASS" start="2025-04-02T20:26:23.967189" elapsed="2.286970"/>
 </kw>
-<status status="PASS" start="2025-04-02T19:59:12.094066" elapsed="22.240656"/>
+<status status="PASS" start="2025-04-02T20:26:11.599506" elapsed="14.655294"/>
 </suite>
 <statistics>
 <total>
@@ -275,7 +77,7 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Client">Client</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Login">Login</stat>
 </suite>
 </statistics>
 <errors>

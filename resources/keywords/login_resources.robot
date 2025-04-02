@@ -14,7 +14,7 @@ Realizar login
 Realizar login sem sucesso
     [Documentation]    Keyword usada para testar o login com dados incorretos
     [Arguments]    ${mail}    ${password}
-    Input Text    id:email   ${mail}    
+    Input Text   id:email   ${mail}    
     Input Password   id:password    ${password}
     Click Button    class:css-1ucues4    
     Wait Until Element Is Visible    class:MuiAlert-standardError
