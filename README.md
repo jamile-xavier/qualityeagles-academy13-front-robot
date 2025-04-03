@@ -50,7 +50,9 @@ Para utilizar o projeto em sua máquina será necessário possuir as seguintes f
 #### Dependências
 
 [Robot](https://robotframework.org/)
-[RequestsLibrary](https://docs.robotframework.org/docs/different_libraries/requests)
+[SeleniumLibrary](https://github.com/robotframework/SeleniumLibrary/)
+[Faker](https://faker.readthedocs.io/en/master/)
+[PYYAML](https://pypi.org/project/PyYAML/)
 
 As dependências poderão ser instaladas manualmente ou utilizando o comando disponível em executando o projeto para que todas as dependências listadas no arquivo requeriments.txt sejam instaladas na raiz do projeto.
 
