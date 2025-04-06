@@ -1,6 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
-Library    ../libs/get_fake_user.py
+Library    ../../libs/get_fake_user.py
 Resource    ../pages/user_variaveis.robot
 
 *** Keywords ***

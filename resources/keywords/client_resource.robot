@@ -1,6 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
-Library    ../libs/get_fake_client.py
+Library    ../../libs/get_fake_client.py
 Resource    ../pages/client_variaveis.robot
 
 *** Keywords ***

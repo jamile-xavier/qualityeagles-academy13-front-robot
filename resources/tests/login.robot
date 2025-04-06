@@ -1,8 +1,8 @@
 *** Settings ***
-Resource    ../resources/keywords/login_resources.robot
-Resource    ../resources/pages/login_variaveis.robot
-Resource    ../resources/keywords/navigation_resource.robot
-Variables   ../fixtures/environments.yaml
+Resource    ../keywords/login_resources.robot
+Resource    ../pages/login_variaveis.robot
+Resource    ../keywords/navigation_resource.robot
+Variables   ../../fixtures/environments.yaml
 
 Suite Setup    Abrir Navegador    url=${LOGIN.url}${LOGIN.endpoint}
 Suite Teardown    Fechar o navegador

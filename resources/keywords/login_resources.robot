@@ -9,7 +9,7 @@ Realizar login
     Input Password   id:password    ${password}
     Click Button    class:css-1ucues4    
     Wait Until Element Is Visible    class:css-18le3pj
-    Capture Element Screenshot    class:css-18le3pj
+    Capture Page Screenshot    prints/login-sucesso.png
 
 Realizar login sem sucesso
     [Documentation]    Keyword usada para testar o login com dados incorretos
@@ -19,6 +19,6 @@ Realizar login sem sucesso
     Click Button    class:css-1ucues4    
     Wait Until Element Is Visible    class:MuiAlert-standardError
     Wait Until Element Contains    locator=class:MuiAlert-standardError    text=E
-    Capture Page Screenshot    
+    Capture Page Screenshot    prints/login-sem-sucesso.png   
 
 
