@@ -10,10 +10,13 @@ Suite Teardown    Fechar o navegador
 *** Test Cases ***
 TC01 - Realizar login com sucesso Admin
    Realizar login   ${MAIL}    ${PASSWORD} 
-   
-#TC02 - Realizar login com senha inválida
-#    Realizar login sem sucesso   ${MAIL}    ${PASSWORD_INVALID}
-#    
-#TC03 - Realizar login com email inválido
-#    Realizar login sem sucesso    ${MAIL_INVALID}   ${PASSWORD}
+   Realizar logout
+      
+TC02 - Realizar login com senha inválida
+    Realizar login sem sucesso   ${MAIL}    ${PASSWORD_INVALID}
+        
+    
+TC03 - Realizar login com email inválido
+    Realizar login sem sucesso    ${MAIL_INVALID}   ${PASSWORD}
+
    
