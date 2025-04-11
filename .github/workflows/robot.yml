@@ -47,7 +47,7 @@ jobs:
       id-token: write
     environment:
       name: github-pages
-      url: https://jamile-xavier.github.io/Quality-Eagles_Robot-Front/report.html
+      url: https://jamile-xavier.github.io/qualityeagles-academy13-front-robot/report.html
 
     steps:
       - name: Setup Pages
