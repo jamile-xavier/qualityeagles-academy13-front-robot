@@ -9,7 +9,7 @@ Realizar cadastro de cliente
     [Arguments]      ${client} 
     Wait Until Element Is Visible    class:css-t7gv5b  timeout=30s 
     Click Button    ${btnNovoCadastro}
-    Wait Until Element Is Visible    class:css-1gibqcr    timeout=30s 
+    Wait Until Element Is Visible    class:css-ffwpz9   timeout=30s 
     ${client}    Get Fake Client
     Input Text     ${cadastroCliente.nomeCompleto}    ${client}[name]
     Input Text     ${cadastroCliente.dataNascimento}    ${client}[birthday]
@@ -34,7 +34,7 @@ Realizar cadastro de cliente com falha
     [Arguments]       ${nomeCompleto}    ${dataNascimento}    ${email}    ${telefone}    ${cargo}    ${rg}    ${cpf}    ${cep}    ${cidade}    ${estado}    ${bairro}    ${rua}    ${numeroImovel}    ${complemento}
     Wait Until Element Is Visible    class:css-t7gv5b  timeout=30s 
     Click Button    ${btnNovoCadastro}
-    Wait Until Element Is Visible    class:css-1gibqcr    timeout=30s 
+    Wait Until Element Is Visible    class:css-ffwpz9   timeout=30s 
     ${client}    Get Fake Client
     Input Text     ${cadastroCliente.nomeCompleto}    ${nomeCompleto}
     Input Text     ${cadastroCliente.dataNascimento}    ${dataNascimento}

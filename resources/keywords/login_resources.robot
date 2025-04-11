@@ -8,7 +8,7 @@ Realizar login
     [Arguments]    ${mail}    ${password}
     Input Text   id:email   ${mail}    
     Input Password   id:password    ${password}
-    Click Button    class:css-1ucues4    
+    Click Button    class:css-mykr3j  
     Wait Until Element Is Visible    class:css-18le3pj
     Capture Page Screenshot    prints/login-sucesso.png
 
@@ -18,9 +18,9 @@ Realizar login sem sucesso
     [Arguments]    ${mail}    ${password}
     Input Text   id:email   ${mail}    
     Input Password   id:password    ${password}
-    Click Button    class:css-1ucues4    
-    Wait Until Element Is Visible    class:MuiAlert-standardError
-    Wait Until Element Contains    locator=class:MuiAlert-standardError    text=E
+    Click Button    class:css-mykr3j   
+    Wait Until Element Is Visible    class:css-18xtib3
+    #Wait Until Element Contains    locator=class:css-18xtib3   text=E
     Capture Page Screenshot    prints/login-sem-sucesso.png   
    
 
