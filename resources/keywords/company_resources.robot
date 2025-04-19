@@ -24,6 +24,42 @@ Realizar cadastro de empresa
     Input Text    ${cadastroEmpresa.estado}    ${company}[state]
     Input Text    ${cadastroEmpresa.bairro}    ${company}[neighborhood]
     Input Text    ${cadastroEmpresa.rua}    ${company}[street]
-    Input Text    ${cadastroEmpresa.numeroImovel}    ${company}[number]
+    Input Text    ${cadastroEmpresa.numero}    ${company}[number]
+    Input Text    ${cadastroEmpresa.complemento}    Loja
+    Click Button  ${btnSalvarNovo}    
+
+Cadastro de empresa com falha
+    [Documentation]       Keyword usada para realizar cadastro de uma empresa
+    [Arguments]    ${corporateName}
+    ...    ${fantasyName}
+    ...    ${corporateEmail} 
+    ...    ${cnpj}
+    ...    ${phone}  
+    ...    ${serviceDescription}
+    ...    ${responsibleName}
+    ...    ${zipCode}
+    ...    ${city}
+    ...    ${state}
+    ...    ${neighborhood}
+    ...    ${street}
+    ...    ${number}
+    
+    Wait Until Element Is Visible    class:css-nhyiur    timeout=30s 
+    Click Button    ${btnNovoRegistro}
+    Wait Until Element Is Visible    class:css-ffwpz9
+    Input Text    ${cadastroEmpresa.razaoSocial}    ${corporateName}
+    Input Text    ${cadastroEmpresa.nomeFantasia}    ${fantasyName}
+    Input Text    ${cadastroEmpresa.email}    ${corporateEmail}
+    Input Text    ${cadastroEmpresa.cnpj}    ${cnpj}
+    Input Text    ${cadastroEmpresa.telefone}    ${phone}     
+    Input Text    ${cadastroEmpresa.descricaoServico}    ${serviceDescription}
+    Input Text    ${cadastroEmpresa.nomeResponsavel}    ${responsibleName}
+    Input Text    ${cadastroEmpresa.cep}    ${zipCode}
+    Input Text    ${cadastroEmpresa.pais}    Brasil
+    Input Text    ${cadastroEmpresa.cidade}    ${city}
+    Input Text    ${cadastroEmpresa.estado}    ${state}
+    Input Text    ${cadastroEmpresa.bairro}    ${neighborhood}
+    Input Text    ${cadastroEmpresa.rua}    ${street}
+    Input Text    ${cadastroEmpresa.numero}    ${number}
     Input Text    ${cadastroEmpresa.complemento}    Loja
     Click Button  ${btnSalvarNovo}    

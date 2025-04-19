@@ -35,7 +35,6 @@ Realizar cadastro de cliente com falha
     Wait Until Element Is Visible    class:css-t7gv5b  timeout=30s 
     Click Button    ${btnNovoCadastro}
     Wait Until Element Is Visible    class:css-ffwpz9   timeout=30s 
-    ${client}    Get Fake Client
     Input Text     ${cadastroCliente.nomeCompleto}    ${nomeCompleto}
     Input Text     ${cadastroCliente.dataNascimento}    ${dataNascimento}
     Input Text     ${cadastroCliente.email}   ${email}

@@ -1,11 +1,11 @@
 *** Variables ***
 &{cadastroEmpresa}
-...    razaoSocial=id:companyName
+...    razaoSocial=id:corporateName
 ...    nomeFantasia=id:fantasyName
-...    email=id:companyMail
+...    email=id:mail
 ...    cnpj=id:matriz
 ...    telefone=id:telephone
-...    descricaoSerrvico=id:serviceDescription
+...    descricaoServico=id:serviceDescription
 ...    nomeResponsavel=id:fullName
 ...    cep=id:zipCode
 ...    pais=id:country
@@ -20,3 +20,4 @@
 ${btnNovoRegistro}    class=css-k66aq0
 ${btnSalvarNovo}    id=save   
 
+${cnpjInvalido}    1236598741
