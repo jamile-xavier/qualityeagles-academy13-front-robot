@@ -17,6 +17,7 @@ jobs:
           pip install --upgrade robotframework-seleniumlibrary
           pip install Faker
           pip install pyyaml
+          pip install webdrivermanager
           webdrivermanager firefox --linkpath /usr/local/bin
       - name: Executando os testes de Front do Robot
         run: robot --outputdir results/ .
