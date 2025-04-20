@@ -24,9 +24,11 @@ jobs:
           pip install pyyaml
 
       - name: Executando os testes de Front do Robot
-        run: |
-          robot --outputdir results/ .
-
+        uses: tarathep/robotframework-github-action@v1.0
+        with:
+          browser: "firefox"
+          tests_dir: "."
+          reports_dir: "results"
       - name: Test Report
         uses: actions/upload-artifact@v4
         if: always()
