@@ -1,38 +1,56 @@
 name: Robot Framework Front Tests
+
 on: [push, workflow_dispatch]
+
 jobs:
   test:
     name: Front Tests Robot
     runs-on: ubuntu-24.04
+
     steps:
       - name: Clonar arquivos do repositorio
         uses: actions/checkout@v4
+
       - name: Configurar Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.9"
+          python-version: "3.x"
+
+      - name: Instalar Firefox e GeckoDriver
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y firefox
+          GECKODRIVER_VERSION=$(curl -s https://api.github.com/repos/mozilla/geckodriver/releases/latest | grep '"tag_name":' | sed -E 's/.*"v([^"]+)".*/\1/')
+          wget https://github.com/mozilla/geckodriver/releases/download/v$GECKODRIVER_VERSION/geckodriver-v$GECKODRIVER_VERSION-linux64.tar.gz
+          tar -xzf geckodriver-v$GECKODRIVER_VERSION-linux64.tar.gz
+          chmod +x geckodriver
+          sudo mv geckodriver /usr/local/bin/
+
       - name: Instalação das Dependencias
         run: |
           pip install robotframework
           pip install --upgrade robotframework-seleniumlibrary
           pip install Faker
           pip install pyyaml
-          pip install webdrivermanager
-          webdrivermanager firefox --linkpath /usr/local/bin
-      - name: Executando os testes de Front do Robot
-        run: robot --outputdir results/ .
+
+      - name: Executando os testes de API do Robot
+        run: |
+          robot --outputdir results/ .
+
       - name: Test Report
         uses: actions/upload-artifact@v4
         if: always()
         with:
           name: robot-framework-front-report
-          path: results/
+          path: results
+
   deploy:
     name: Deploy GitHub Pages 🌐
     runs-on: ubuntu-24.04
     if: always()
     needs:
       - test
+
     permissions:
       contents: read
       pages: write
@@ -40,18 +58,22 @@ jobs:
     environment:
       name: github-pages
       url: https://jamile-xavier.github.io/qualityeagles-academy13-front-robot/report.html
+
     steps:
       - name: Setup Pages
         uses: actions/configure-pages@v4
+
       - name: Download Artifacts
         uses: actions/download-artifact@v4
         with:
           name: robot-framework-front-report
           path: results/
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: results/
+
       - name: Deploy to Github Pages
         id: deployment
         uses: actions/deploy-pages@v4
