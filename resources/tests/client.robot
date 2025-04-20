@@ -6,7 +6,7 @@ Resource    ../keywords/navigation_resource.robot
 Variables   ../../fixtures/environments.yaml
 Library    ../../libs/get_fake_client.py
 
-Suite Setup     Abrir o navegador e realizar login    user=${MAIL}    password=${PASSWORD}    url=${LOGIN.url}${LOGIN.endpoint}    browser=chrome
+Suite Setup     Abrir o navegador com chrome e realizar login    user=${MAIL}    password=${PASSWORD}    url=${LOGIN.url}${LOGIN.endpoint}    
 Suite Teardown    Fechar o navegador   
 
 *** Test Cases ***
