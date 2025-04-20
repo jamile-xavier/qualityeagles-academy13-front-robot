@@ -6,7 +6,7 @@ Resource    ../keywords/navigation_resource.robot
 Variables   ../../fixtures/environments.yaml
 Library    ../../libs/get_fake_company.py
 
-Suite Setup     Abrir o navegador e realizar login    user=${MAIL}    password=${PASSWORD}    url=${LOGIN.url}${LOGIN.endpoint}    browser=chrome
+Suite Setup     Abrir o navegador e realizar login    user=${MAIL}    password=${PASSWORD}    url=${LOGIN.url}${LOGIN.endpoint}    browser=firefox
 Suite Teardown    Fechar o navegador
 
 *** Test Cases ***

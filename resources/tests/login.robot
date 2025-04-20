@@ -4,7 +4,7 @@ Resource    ../pages/login_variaveis.robot
 Resource    ../keywords/navigation_resource.robot
 Variables   ../../fixtures/environments.yaml
 
-Suite Setup    Abrir Navegador    url=${LOGIN.url}${LOGIN.endpoint}
+Suite Setup    Abrir Navegador    url=${LOGIN.url}${LOGIN.endpoint}    browser=firefox
 Suite Teardown    Fechar o navegador
 
 *** Test Cases ***

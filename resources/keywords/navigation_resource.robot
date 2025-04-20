@@ -7,8 +7,8 @@ Variables      ../../fixtures/environments.yaml
 
 Abrir Navegador
     [Documentation]    Abre o navegador na página especificada
-    [Arguments]    ${url}    ${browser}=chrome
-    Open Browser    url=${url}    browser=${browser}    options=add_argument("--headless")
+    [Arguments]    ${url}    ${browser}=firefox
+    Open Browser    url=${url}    browser=${browser}    options=add_argument("--headless")    
 
 
 Fechar o navegador
