@@ -16,16 +16,6 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Instalar Firefox e GeckoDriver
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y firefox
-          GECKODRIVER_VERSION=$(curl -s https://api.github.com/repos/mozilla/geckodriver/releases/latest | grep '"tag_name":' | sed -E 's/.*"v([^"]+)".*/\1/')
-          wget https://github.com/mozilla/geckodriver/releases/download/v$GECKODRIVER_VERSION/geckodriver-v$GECKODRIVER_VERSION-linux64.tar.gz
-          tar -xzf geckodriver-v$GECKODRIVER_VERSION-linux64.tar.gz
-          chmod +x geckodriver
-          sudo mv geckodriver /usr/local/bin/
-
       - name: Instalação das Dependencias
         run: |
           pip install robotframework
@@ -44,36 +34,36 @@ jobs:
           name: robot-framework-front-report
           path: results
 
-  deploy:
-    name: Deploy GitHub Pages 🌐
-    runs-on: ubuntu-24.04
-    if: always()
-    needs:
-      - test
+deploy:
+  name: Deploy GitHub Pages 🌐
+  runs-on: ubuntu-24.04
+  if: always()
+  needs:
+    - test
 
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: https://jamile-xavier.github.io/qualityeagles-academy13-front-robot/report.html
+  permissions:
+    contents: read
+    pages: write
+    id-token: write
+  environment:
+    name: github-pages
+  url: https://jamile-xavier.github.io/qualityeagles-academy13-front-robot/report.html
 
-    steps:
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
+  steps:
+    - name: Setup Pages
+      uses: actions/configure-pages@v4
 
-      - name: Download Artifacts
-        uses: actions/download-artifact@v4
-        with:
-          name: robot-framework-front-report
-          path: results/
+    - name: Download Artifacts
+      uses: actions/download-artifact@v4
+      with:
+        name: robot-framework-front-report
+        path: results/
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: results/
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: results/
 
-      - name: Deploy to Github Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+    - name: Deploy to Github Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
