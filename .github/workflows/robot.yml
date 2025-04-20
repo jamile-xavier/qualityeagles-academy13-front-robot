@@ -34,7 +34,7 @@ jobs:
         if: always()
         with:
           name: robot-framework-front-report
-          path: results
+          path: results/
 
   deploy:
     name: Deploy GitHub Pages 🌐
