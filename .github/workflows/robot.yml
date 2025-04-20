@@ -17,16 +17,9 @@ jobs:
           pip install --upgrade robotframework-seleniumlibrary
           pip install Faker
           pip install pyyaml
+          webdrivermanager firefox --linkpath /usr/local/bin
       - name: Executando os testes de Front do Robot
-        uses: tarathep/robotframework-github-action@v1.0
-        with:
-          browser: "firefox"
-          tests_dir: "."
-          reports_dir: "results"
-      - name: Verificar arquivos de resultados
-        run: |
-          ls -la results/
-          echo "Conteúdo do diretório results:"
+        run: robot --outputdir results/ .
       - name: Test Report
         uses: actions/upload-artifact@v4
         if: always()
