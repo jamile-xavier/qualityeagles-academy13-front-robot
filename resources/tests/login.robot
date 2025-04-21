@@ -1,6 +1,6 @@
 *** Settings ***
 Resource    ../keywords/login_resources.robot
-Resource    ../pages/login_variaveis.robot
+Resource    ../pages/login_variables.robot
 Resource    ../keywords/navigation_resource.robot
 Variables   ../../fixtures/environments.yaml
 

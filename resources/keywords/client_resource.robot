@@ -1,7 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
 Library    ../../libs/get_fake_client.py
-Resource    ../pages/client_variaveis.robot
+Resource    ../pages/client_variables.robot
 
 *** Keywords ***
 Realizar cadastro de cliente

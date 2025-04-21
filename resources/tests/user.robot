@@ -1,7 +1,7 @@
 *** Settings ***
 Resource    ../keywords/user_resource.robot
-Resource    ../pages/user_variaveis.robot
-Resource    ../pages/login_variaveis.robot
+Resource    ../pages/user_variables.robot
+Resource    ../pages/login_variables.robot
 Resource    ../keywords/navigation_resource.robot
 Variables   ../../fixtures/environments.yaml
 Library    ../../libs/get_fake_user.py

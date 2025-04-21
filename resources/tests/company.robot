@@ -1,7 +1,7 @@
 *** Settings ***
 Resource    ../keywords/company_resources.robot
-Resource    ../pages/company_variaveis.robot
-Resource    ../pages/login_variaveis.robot
+Resource    ../pages/company_variables.robot
+Resource    ../pages/login_variables.robot
 Resource    ../keywords/navigation_resource.robot
 Variables   ../../fixtures/environments.yaml
 Library    ../../libs/get_fake_company.py

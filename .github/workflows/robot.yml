@@ -23,7 +23,7 @@ jobs:
           pip install Faker
           pip install pyyaml
 
-      - name: Executando os testes de API do Robot
+      - name: Executando os testes de Front do Robot
         run: |
           robot --outputdir results/ .
 
