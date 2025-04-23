@@ -30,6 +30,7 @@ TC02 - Realizar cadastro de empresa sem razão social
     ...    neighborhood=${company}[neighborhood]
     ...    street=${company}[street]
     ...    number=${company}[number]
+    Wait Until Element Contains    locator=class:css-bbipig  text=O campo razão social é obrigatório
     Capture Page Screenshot    prints/cadastro-empresa-sem-razão-social.png
 
 TC03 - Realizar cadastro de empresa com 10 dígitos no CNPJ
@@ -48,6 +49,7 @@ TC03 - Realizar cadastro de empresa com 10 dígitos no CNPJ
     ...    neighborhood=${company}[neighborhood]
     ...    street=${company}[street]
     ...    number=${company}[number]
+    Wait Until Element Contains    locator=class:css-bbipig  text=CNPJ inválido
     Capture Page Screenshot    prints/cadastro-empresa-cnpj-invalido.png
 
 TC04 - Realizar cadastro de empresa sem contato responsável
@@ -66,9 +68,31 @@ TC04 - Realizar cadastro de empresa sem contato responsável
     ...    neighborhood=${company}[neighborhood]
     ...    street=${company}[street]
     ...    number=${company}[number]
+    Wait Until Element Contains    locator=class:css-bbipig  text=O campo nome do responsável é obrigatório
     Capture Page Screenshot    prints/cadastro-empresa-sem-contato-responsável.png
 
-TC05 - Consultar Lista de Empresas com sucesso
+TC05 - Realizar cadastro de empresa com todos os dados em branco
+    Navegar Para Página    url=${COMPANY.url}    url_complementar=${COMPANY.endpoint}
+    ${company}    Get Fake Company
+    Cadastro de empresa com falha 
+    ...    corporateName=
+    ...    fantasyName=
+    ...    corporateEmail=
+    ...    cnpj= 
+    ...    phone=
+    ...    serviceDescription=
+    ...    responsibleName=
+    ...    zipCode=
+    ...    city=
+    ...    state=
+    ...    neighborhood=
+    ...    street=
+    ...    number=
+    Wait Until Element Contains    locator=class:css-bbipig  text=O campo razão social é obrigatório
+    Capture Page Screenshot    prints/cadastro-empresa-com-dados-em-branco.png
+
+
+TC06 - Consultar Lista de Empresas com sucesso
     Navegar Para Página    url=${COMPANY.url}    url_complementar=${COMPANY.endpoint}
     Wait Until Element Is Visible    class:css-nhyiur 
     Capture Page Screenshot    prints/listar-empresas-sucesso.png

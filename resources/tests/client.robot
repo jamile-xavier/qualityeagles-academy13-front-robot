@@ -68,7 +68,8 @@ TC04 - Realizar cadastro de cliente sem cpf
     ...    telefone=${client}[phone]   
     ...    cargo=${client}[job]    
     ...    rg=${client}[rg]     
-    ...    cpf=  cep=${client}[zipCode]  
+    ...    cpf=  
+    ...    cep=${client}[zipCode]  
     ...    cidade=${client}[city]   
     ...    estado=${client}[state]  
     ...    bairro=${client}[neighborhood]  
@@ -78,8 +79,28 @@ TC04 - Realizar cadastro de cliente sem cpf
     Wait Until Element Contains    locator=class:css-1xsto0d   text=O campo CPF é obrigatório.
     Capture Page Screenshot    prints/cadastro-cliente-sem-cpf.png
 
-  
-TC05 - Consultar lista de clientes com sucesso
+TC05 - Realizar cadastro de cliente com todos os campos em branco
+    Navegar Para Página    url=${CLIENT.url}    url_complementar=${CLIENT.endpoint}
+    ${client}    Get Fake Client
+    Realizar cadastro de cliente com falha 
+    ...    nomeCompleto=
+    ...    dataNascimento=
+    ...    email=
+    ...    telefone= 
+    ...    cargo=
+    ...    rg=   
+    ...    cpf=  
+    ...    cep=
+    ...    cidade=
+    ...    estado=
+    ...    bairro=
+    ...    rua=   
+    ...    numeroImovel=  
+    ...    complemento=
+    Wait Until Element Contains    locator=class:css-bbipig  text=O campo nome completo é obrigatório
+    Capture Page Screenshot    prints/cadastro-cliente-dados-em-branco.png  
+
+TC06 - Consultar lista de clientes com sucesso
     Navegar Para Página    url=${CLIENT.url}    url_complementar=${CLIENT.endpoint}
     Wait Until Element Is Visible    class:css-dy4jwo
     Capture Page Screenshot    prints/listar-clientes-sucesso.png

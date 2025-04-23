@@ -10,6 +10,7 @@ Teste de Automação Front de ERP com Robot Framework
 <p align="center"> Realização de testes de sucesso e alguns de exceção dos endpoints mencionados.</p>
 <p align="center">Para realização dos testes foi utilizado os casos de testes e critérios de aceites disponibilizados pela Qa Coders através do Azure e também os endpoints disponibilizados através do Swagger.</p>
 <p align="center"> O Azure também foi utilizado para abertura das PBI´s, Test Plan Suite e Test Pan.</p>
+<p align="center"> Os testes contidos nesse repositório possui testes de contribuição de todos os membros da equipe sendo necessário modificar alguns para adaptação e devido funcionamento após a unificação dos testes.</p>
 
 ### Sumário
 
