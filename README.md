@@ -103,13 +103,13 @@ Teste de usuários:
 
 ### Equipe
 
-- Cristian (TechLead)
-- Carol
-- Italo
-- Iza
-- Jamile
-- Lucas
-- Tadeu
+- Cristian Fabiano Eisenhut (TechLead)
+- Caroline Uchida
+- Ítalo Mateus Costa
+- Jamile Xavier Mendonça
+- Lucas Antônio
+- Sônia Izabel Wicki
+- Tadeu Augusto Dutra Pinto
 
 ### Licença
 
